@@ -7,6 +7,7 @@
 
 body {
   background-color: #f8fbff;
+  color: #333;
 }
 
 .app {
@@ -14,6 +15,73 @@ body {
   min-height: 100vh;
 }
 
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  background: white;
+  padding: 30px 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+}
+
+.sidebar-header {
+  margin-bottom: 50px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.user-title {
+  font-size: 12px;
+  color: #666;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-item.active {
+  background: #5932EA;
+  color: white;
+}
+
+.nav-item:hover {
+  background: #f5f5f5;
+}
+
+.nav-item.active:hover {
+  background: #4a2bc4;
+}
+
+.nav-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.nav-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Główna zawartość */
 .main-content {
   flex: 1;
   padding: 30px;
@@ -29,10 +97,9 @@ body {
   font-size: 24px;
   font-weight: 500;
   color: #000;
-  margin-bottom: 10px;
 }
 
-/* Stats Cards */
+/* Karty statystyk */
 .stats-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -42,22 +109,24 @@ body {
 
 .stat-card {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
 }
 
 .stat-card h3 {
   font-size: 14px;
   color: #666;
   margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .stat-card .number {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
   color: #000;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .stat-change {
@@ -65,26 +134,37 @@ body {
   align-items: center;
   font-size: 12px;
   color: #00B887;
+  font-weight: 500;
 }
 
-/* Customer Table */
+.stat-change.up {
+  color: #00B887;
+}
+
+.stat-change.down {
+  color: #FF5B5B;
+}
+
+/* Tabela */
 .table-container {
   background: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
 }
 
 .table-header {
   display: flex;
-  justify-content: between;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .table-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
+  color: #000;
 }
 
 .table-controls {
@@ -97,7 +177,9 @@ body {
   position: relative;
   background: #f9fbff;
   border-radius: 8px;
-  padding: 8px 15px;
+  padding: 10px 15px;
+  border: 1px solid #eee;
+  min-width: 200px;
 }
 
 .search-box input {
@@ -105,17 +187,21 @@ body {
   background: none;
   outline: none;
   padding-left: 25px;
+  width: 100%;
+  font-size: 12px;
 }
 
 .sort-dropdown {
   background: #f9fbff;
   border-radius: 8px;
-  padding: 8px 15px;
-  border: none;
+  padding: 10px 15px;
+  border: 1px solid #eee;
   cursor: pointer;
+  font-size: 12px;
+  color: #666;
 }
 
-/* Table Styles */
+/* Tabela */
 .customer-table {
   width: 100%;
   border-collapse: collapse;
@@ -127,36 +213,43 @@ body {
   color: #666;
   font-weight: 500;
   border-bottom: 1px solid #eee;
+  font-size: 12px;
 }
 
 .customer-table td {
   padding: 15px;
   border-bottom: 1px solid #eee;
+  font-size: 12px;
 }
 
 .status {
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 4px;
   font-size: 12px;
   font-weight: 500;
+  display: inline-block;
 }
 
 .status.active {
   background: #e8f5e8;
   color: #00B887;
+  border: 1px solid #00B887;
 }
 
 .status.inactive {
   background: #ffe8e8;
   color: #FF5B5B;
+  border: 1px solid #FF5B5B;
 }
 
-/* Pagination */
+/* Paginacja */
 .pagination {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
 }
 
 .pagination-info {
@@ -166,25 +259,30 @@ body {
 
 .pagination-controls {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
 }
 
 .page-number {
-  padding: 5px 10px;
+  padding: 6px 10px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 12px;
+  border: 1px solid #eee;
+  background: white;
 }
 
 .page-number.active {
   background: #5932EA;
   color: white;
+  border-color: #5932EA;
 }
 
 .page-arrow {
-  padding: 5px 10px;
+  padding: 6px 10px;
   border-radius: 4px;
   cursor: pointer;
   background: #f5f5f5;
+  border: 1px solid #eee;
+  font-size: 12px;
 }
