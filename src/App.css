@@ -430,10 +430,54 @@ body {
   position: relative;
 }
 
-/* Lepsze style user section */
+/* Sekcja użytkownika w sidebar - NA DOLE */
+.user-section {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  padding: 15px;
+  background: #f8f9ff;
+  border-radius: 10px;
+  border: 1px solid #e8eaff;
+}
+
+.user-info {
+  margin-bottom: 10px;
+}
+
+.user-details {
+  text-align: center;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
 .user-team {
   font-size: 12px;
   color: #5932EA;
   font-weight: 500;
-  margin-top: 2px;
+}
+
+/* Przycisk wylogowania - MNIEJSZY */
+.logout-btn {
+  width: 100%;
+  padding: 8px 12px;
+  background: transparent;
+  color: #666;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s;
+}
+
+.logout-btn:hover {
+  background: #fff;
+  border-color: #5932EA;
+  color: #5932EA;
 }
