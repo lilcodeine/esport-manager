@@ -1,52 +1,57 @@
-import React, { useState } from 'react';  
+import React from 'react';
 
 const CustomerTable = () => {
-  const [customers] = useState([
+  const players = [
     {
-      name: 'Jane Cooper',
-      company: 'Microsoft',
-      phone: '(225) 555-0118',
-      email: 'jane@microsoft.com',
-      country: 'United States',
-      status: 'Active'
+      name: 'Jan Kowalski',
+      age: '22',
+      role: 'Carry',
+      form: 'Dobra',
+      value: '€150,000'
     },
     {
-      name: 'Floyd Miles',
-      company: 'Yahoo',
-      phone: '(205) 555-0100',
-      email: 'floyd@yahoo.com',
-      country: 'Kiribati',
-      status: 'Inactive'
+      name: 'Adam Nowak',
+      age: '24', 
+      role: 'Support',
+      form: 'Średnia',
+      value: '€80,000'
     },
     {
-      name: 'Ronald Richards',
-      company: 'Adobe',
-      phone: '(302) 555-0107',
-      email: 'ronald@adobe.com',
-      country: 'Israel',
-      status: 'Inactive'
+      name: 'Piotr Wiśniewski',
+      age: '20',
+      role: 'Mid',
+      form: 'Bardzo dobra',
+      value: '€200,000'
     },
     {
-      name: 'Marvin McKinney',
-      company: 'Tesla',
-      phone: '(252) 555-0126',
-      email: 'marvin@tesla.com',
-      country: 'Iran',
-      status: 'Active'
+      name: 'Michał Lewandowski',
+      age: '25',
+      role: 'Offlane',
+      form: 'Słaba',
+      value: '€60,000'
+    },
+    {
+      name: 'Krzysztof Wójcik',
+      age: '21',
+      role: 'Coach',
+      form: 'Dobra',
+      value: '€90,000'
     }
-  ]);
+  ];
 
   return (
     <div className="table-container">
       <div className="table-header">
-        <h2 className="table-title">All Customers</h2>
+        <h2 className="table-title">Zarządzanie Graczami</h2>
         <div className="table-controls">
           <div className="search-box">
             <span>🔍</span>
-            <input type="text" placeholder="Search" />
+            <input type="text" placeholder="Szukaj gracza..." />
           </div>
           <select className="sort-dropdown">
-            <option>Short by: Newest</option>
+            <option>Sortuj: Najnowsi</option>
+            <option>Sortuj: Wartość</option>
+            <option>Sortuj: Forma</option>
           </select>
         </div>
       </div>
@@ -54,47 +59,29 @@ const CustomerTable = () => {
       <table className="customer-table">
         <thead>
           <tr>
-            <th>Customer Name</th>
-            <th>Company</th>
-            <th>Phone Number</th>
-            <th>Email</th>
-            <th>Country</th>
-            <th>Status</th>
+            <th>Zawodnik</th>
+            <th>Wiek</th>
+            <th>Rola</th>
+            <th>Forma</th>
+            <th>Wartość</th>
           </tr>
         </thead>
         <tbody>
-          {customers.map((customer, index) => (
+          {players.map((player, index) => (
             <tr key={index}>
-              <td>{customer.name}</td>
-              <td>{customer.company}</td>
-              <td>{customer.phone}</td>
-              <td>{customer.email}</td>
-              <td>{customer.country}</td>
+              <td>{player.name}</td>
+              <td>{player.age}</td>
+              <td>{player.role}</td>
               <td>
-                <span className={`status ${customer.status.toLowerCase()}`}>
-                  {customer.status}
+                <span className={`status ${player.form.toLowerCase().includes('dobra') ? 'active' : player.form.toLowerCase().includes('słaba') ? 'inactive' : ''}`}>
+                  {player.form}
                 </span>
               </td>
+              <td>{player.value}</td>
             </tr>
           ))}
         </tbody>
       </table>
-
-      <div className="pagination">
-        <div className="pagination-info">
-          Showing data 1 to 8 of 256K entries
-        </div>
-        <div className="pagination-controls">
-          <div className="page-arrow">⟨</div>
-          <div className="page-number active">1</div>
-          <div className="page-number">2</div>
-          <div className="page-number">3</div>
-          <div className="page-number">4</div>
-          <span>...</span>
-          <div className="page-number">40</div>
-          <div className="page-arrow">⟩</div>
-        </div>
-      </div>
     </div>
   );
 };
