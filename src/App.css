@@ -242,6 +242,12 @@ body {
   border: 1px solid #FF5B5B;
 }
 
+.status.average {
+  background: #fff4e6;
+  color: #FFA500;
+  border: 1px solid #FFA500;
+}
+
 /* Paginacja */
 .pagination {
   display: flex;

@@ -39,21 +39,17 @@ const CustomerTable = () => {
     }
   ];
 
+  const getStatusClass = (form) => {
+    if (form.toLowerCase().includes('bardzo dobra') || form.toLowerCase().includes('dobra')) return 'active';
+    if (form.toLowerCase().includes('średnia')) return 'average';
+    if (form.toLowerCase().includes('słaba')) return 'inactive';
+    return '';
+  };
+
   return (
     <div className="table-container">
       <div className="table-header">
         <h2 className="table-title">Zarządzanie Graczami</h2>
-        <div className="table-controls">
-          <div className="search-box">
-            <span>🔍</span>
-            <input type="text" placeholder="Szukaj gracza..." />
-          </div>
-          <select className="sort-dropdown">
-            <option>Sortuj: Najnowsi</option>
-            <option>Sortuj: Wartość</option>
-            <option>Sortuj: Forma</option>
-          </select>
-        </div>
       </div>
 
       <table className="customer-table">
@@ -73,7 +69,7 @@ const CustomerTable = () => {
               <td>{player.age}</td>
               <td>{player.role}</td>
               <td>
-                <span className={`status ${player.form.toLowerCase().includes('dobra') ? 'active' : player.form.toLowerCase().includes('słaba') ? 'inactive' : ''}`}>
+                <span className={`status ${getStatusClass(player.form)}`}>
                   {player.form}
                 </span>
               </td>
