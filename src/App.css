@@ -341,3 +341,64 @@ body {
 .customer-table td:nth-child(4) { width: 15%; } /* Forma */
 .customer-table th:nth-child(5),
 .customer-table td:nth-child(5) { width: 20%; } /* Wartość */
+
+/* Logowanie */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f8fbff;
+}
+
+.login-form {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.login-form input,
+.login-form select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background: #5932EA;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.google-btn {
+  background: #4285F4 !important;
+}
+
+.toggle-auth {
+  text-align: center;
+  color: #5932EA;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.toggle-auth:hover {
+  text-decoration: underline;
+}

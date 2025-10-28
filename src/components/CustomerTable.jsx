@@ -49,7 +49,7 @@ const CustomerTable = () => {
   return (
     <div className="table-container">
       <div className="table-header">
-        <h2 className="table-title">Zarządzanie Graczami</h2>
+        <h2 className="table-title">Players</h2>
       </div>
 
       <table className="customer-table">
