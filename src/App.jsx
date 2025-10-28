@@ -36,7 +36,7 @@ function App() {
     <div className="app">
       <Sidebar onLogout={handleLogout} />
       <div className="main-content">
-        <Header user={user} />
+        {/* <Header user={user} /> */}
         <CustomerTable />
       </div>
     </div>
