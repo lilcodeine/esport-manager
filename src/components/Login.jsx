@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { auth } from '../firebase/config';
-import { doc, setDoc, getDoc } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../firebase/config';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [nickname, setNickname] = useState('');
   const [isLogin, setIsLogin] = useState(true);
   const [selectedTeam, setSelectedTeam] = useState('');
 
@@ -25,27 +26,43 @@ const Login = () => {
         user = await signInWithEmailAndPassword(auth, email, password);
       } else {
         user = await createUserWithEmailAndPassword(auth, email, password);
-        // Zapisz wybór drużyny dla nowego użytkownika
-        if (selectedTeam) {
+        // Zapisz nick i drużynę dla nowego użytkownika
+        if (nickname && selectedTeam) {
           await setDoc(doc(db, 'users', user.user.uid), {
+            nickname: nickname,
             team: selectedTeam,
-            email: user.user.email
+            email: user.user.email,
+            createdAt: new Date()
           });
         }
       }
-      console.log('Zalogowano:', user);
     } catch (error) {
       console.error('Błąd auth:', error.message);
+      alert('Błąd: ' + error.message);
     }
   };
 
   const handleGoogleLogin = async () => {
     try {
       const provider = new GoogleAuthProvider();
-      const user = await signInWithPopup(auth, provider);
-      console.log('Google login:', user);
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      
+      // Sprawdź czy użytkownik już istnieje
+      const userDoc = await getDoc(doc(db, 'users', user.uid));
+      if (!userDoc.exists()) {
+        // Utwórz profil dla nowego użytkownika Google
+        await setDoc(doc(db, 'users', user.uid), {
+          nickname: user.displayName || user.email.split('@')[0],
+          team: 'Brak drużyny',
+          email: user.email,
+          createdAt: new Date(),
+          isGoogleUser: true
+        });
+      }
     } catch (error) {
       console.error('Błąd Google auth:', error);
+      alert('Błąd Google: ' + error.message);
     }
   };
 
@@ -55,6 +72,15 @@ const Login = () => {
         <h2>{isLogin ? 'Zaloguj się' : 'Zarejestruj się'}</h2>
         
         <form onSubmit={handleEmailAuth}>
+          {!isLogin && (
+            <input
+              type="text"
+              placeholder="Twój nick"
+              value={nickname}
+              onChange={(e) => setNickname(e.target.value)}
+              required
+            />
+          )}
           <input
             type="email"
             placeholder="Email"
@@ -87,6 +113,8 @@ const Login = () => {
             {isLogin ? 'Zaloguj' : 'Zarejestruj'}
           </button>
         </form>
+
+        <div className="divider">lub</div>
 
         <button onClick={handleGoogleLogin} className="google-btn">
           Zaloguj przez Google
