@@ -5,6 +5,8 @@ import { db } from '../firebase/config';
 
 const Sidebar = ({ onLogout }) => {
   const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
   const menuItems = [
     { name: 'Dashboard', icon: '📊' },
     { name: 'Players', icon: '👥', active: true },
@@ -18,15 +20,44 @@ const Sidebar = ({ onLogout }) => {
   useEffect(() => {
     const fetchUserData = async () => {
       if (user) {
-        const userDoc = await getDoc(doc(db, 'users', user.uid));
-        if (userDoc.exists()) {
-          setUserData(userDoc.data());
+        try {
+          const userDoc = await getDoc(doc(db, 'users', user.uid));
+          if (userDoc.exists()) {
+            setUserData(userDoc.data());
+            console.log('Dane użytkownika:', userDoc.data()); // DEBUG
+          }
+        } catch (error) {
+          console.error('Błąd ładowania danych:', error);
         }
       }
+      setLoading(false);
     };
 
     fetchUserData();
   }, [user]);
+
+  // Avatar - użyj nicku jeśli istnieje, inaczej email
+  const getAvatarLetter = () => {
+    if (userData?.nickname) {
+      return userData.nickname.charAt(0).toUpperCase();
+    }
+    if (user?.email) {
+      return user.email.charAt(0).toUpperCase();
+    }
+    return 'U';
+  };
+
+  if (loading) {
+    return (
+      <div className="sidebar">
+        <div className="sidebar-header">
+          <div className="logo">Esport Manager</div>
+          <div className="user-title">Team Management</div>
+        </div>
+        <div className="loading-sidebar">Ładowanie...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="sidebar">
@@ -51,12 +82,16 @@ const Sidebar = ({ onLogout }) => {
       <div className="user-section">
         <div className="user-info">
           <div className="user-avatar">
-            {userData?.nickname?.charAt(0) || user?.email?.charAt(0).toUpperCase()}
+            {getAvatarLetter()}
           </div>
           <div className="user-details">
-            <div className="user-name">{userData?.nickname || user?.email?.split('@')[0]}</div>
-            <div className="user-team">{userData?.team || 'Brak drużyny'}</div>
-            <div className="user-status">Online</div>
+            <div className="user-name">
+              {userData?.nickname || user?.email?.split('@')[0]}
+            </div>
+            <div className="user-team">
+              🏆 {userData?.team || 'Brak drużyny'}
+            </div>
+            <div className="user-status">● Online</div>
           </div>
         </div>
         <button onClick={onLogout} className="logout-btn">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { auth } from '../firebase/config';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { db } from '../firebase/config';
 
 const Login = () => {
@@ -26,15 +26,14 @@ const Login = () => {
         user = await signInWithEmailAndPassword(auth, email, password);
       } else {
         user = await createUserWithEmailAndPassword(auth, email, password);
-        // Zapisz nick i drużynę dla nowego użytkownika
-        if (nickname && selectedTeam) {
-          await setDoc(doc(db, 'users', user.user.uid), {
-            nickname: nickname,
-            team: selectedTeam,
-            email: user.user.email,
-            createdAt: new Date()
-          });
-        }
+        // ZAPISZ NICK I DRUŻYNĘ - POPRAWIONE
+        await setDoc(doc(db, 'users', user.user.uid), {
+          nickname: nickname,
+          team: selectedTeam,  // TO JEST WAŻNE!
+          email: user.user.email,
+          createdAt: new Date()
+        });
+        console.log('Zapisano użytkownika:', nickname, 'Drużyna:', selectedTeam);
       }
     } catch (error) {
       console.error('Błąd auth:', error.message);
@@ -54,7 +53,7 @@ const Login = () => {
         // Utwórz profil dla nowego użytkownika Google
         await setDoc(doc(db, 'users', user.uid), {
           nickname: user.displayName || user.email.split('@')[0],
-          team: 'Brak drużyny',
+          team: 'Brak drużyny',  // Google users muszą wybrać drużynę później
           email: user.email,
           createdAt: new Date(),
           isGoogleUser: true
