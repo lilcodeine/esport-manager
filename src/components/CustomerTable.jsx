@@ -3,37 +3,37 @@ import React from 'react';
 const CustomerTable = () => {
   const players = [
     {
-      name: 'Jan Kowalski',
-      age: '22',
-      role: 'Carry',
+      name: 'Dan "apEX" Madesclaire',
+      age: '32',
+      role: 'In-game leader',
       form: 'Dobra',
       value: '€150,000'
     },
     {
-      name: 'Adam Nowak',
-      age: '24', 
-      role: 'Support',
+      name: 'Robin "ropz" Kool',
+      age: '25', 
+      role: 'Rifler',
       form: 'Średnia',
       value: '€80,000'
     },
     {
-      name: 'Piotr Wiśniewski',
-      age: '20',
-      role: 'Mid',
+      name: 'Mathieu "ZywOo" Herbaut',
+      age: '24',
+      role: 'AWPer',
       form: 'Bardzo dobra',
       value: '€200,000'
     },
     {
-      name: 'Michał Lewandowski',
-      age: '25',
-      role: 'Offlane',
+      name: 'Shahar "flameZ" Shushan',
+      age: '22',
+      role: 'Rifler',
       form: 'Słaba',
       value: '€60,000'
     },
     {
-      name: 'Krzysztof Wójcik',
-      age: '21',
-      role: 'Coach',
+      name: 'William "mezii" Merriman',
+      age: '27',
+      role: 'Rifler',
       form: 'Dobra',
       value: '€90,000'
     }
