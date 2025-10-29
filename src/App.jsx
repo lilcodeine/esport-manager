@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import TeamRanking from './components/TeamRanking';
 import './App.css';
+import './components/Sidebar.css'; 
+import './components/TeamRanking.css'; 
 
 function App() {
   const [activeMenu, setActiveMenu] = useState('players');
