@@ -11,8 +11,9 @@
 }
 
 .sidebar-header {
-  padding: 20px;
+  padding: 25px 20px;
   border-bottom: 1px solid #34495e;
+  background: #1a252f;
 }
 
 .logo {
@@ -29,59 +30,75 @@
 
 .sidebar-nav {
   flex: 1;
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 .nav-item {
   display: flex;
   align-items: center;
-  padding: 12px 20px;
+  padding: 15px 20px;
   cursor: pointer;
   transition: background 0.3s;
+  border-left: 4px solid transparent;
 }
 
 .nav-item:hover {
   background: #34495e;
+  border-left-color: #3498db;
 }
 
 .nav-item.active {
   background: #3498db;
+  border-left-color: #2980b9;
 }
 
 .nav-icon {
-  margin-right: 10px;
+  margin-right: 12px;
   font-size: 1.2rem;
+  width: 20px;
+  text-align: center;
 }
 
 .nav-text {
   font-size: 1rem;
+  font-weight: 500;
 }
 
 .user-section {
   padding: 20px;
   border-top: 1px solid #34495e;
-  background: #34495e;
+  background: #1a252f;
+  margin-top: auto;
+}
+
+.user-info {
+  margin-bottom: 15px;
 }
 
 .user-name {
   font-weight: bold;
   margin-bottom: 5px;
+  font-size: 1rem;
 }
 
 .user-team {
   color: #bdc3c7;
   font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .logout-btn {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background: #e74c3c;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  margin-top: 10px;
+  font-weight: 500;
+  transition: background 0.3s;
 }
 
 .logout-btn:hover {

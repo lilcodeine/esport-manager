@@ -6,46 +6,48 @@
 
 .ranking-header {
   background: white;
-  padding: 30px;
+  padding: 25px 30px;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
 }
 
 .ranking-header h1 {
   color: #2c3e50;
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
   font-size: 2rem;
+  font-weight: 700;
 }
 
 .update-info {
   color: #7f8c8d;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .ranking-table-container {
   background: white;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
   overflow: hidden;
 }
 
 .ranking-table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 0.95rem;
 }
 
 .ranking-table th {
   background: #34495e;
   color: white;
-  padding: 15px 12px;
+  padding: 16px 12px;
   text-align: left;
   font-weight: 600;
   font-size: 0.9rem;
 }
 
 .ranking-table td {
-  padding: 12px;
+  padding: 14px 12px;
   border-bottom: 1px solid #ecf0f1;
   color: #2c3e50;
 }
@@ -56,49 +58,60 @@
 
 .ranking-table tr:hover {
   background: #e3f2fd;
+  transition: background 0.2s;
 }
 
-.position-col { width: 80px; }
-.team-col { width: 250px; }
+.position-col { width: 90px; text-align: center; }
+.team-col { width: 220px; }
 .points-col { width: 100px; }
-.region-col { width: 150px; }
+.region-col { width: 140px; }
 .budget-col { width: 150px; }
-.players-col { width: 100px; }
-
-.position-cell {
-  text-align: center;
-}
+.players-col { width: 100px; text-align: center; }
 
 .position-badge {
   background: #3498db;
   color: white;
-  padding: 5px 10px;
-  border-radius: 15px;
+  padding: 6px 12px;
+  border-radius: 20px;
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
+  display: inline-block;
+  min-width: 40px;
 }
 
 .team-name {
   font-weight: 600;
   color: #2c3e50;
+  font-size: 1rem;
 }
 
 .team-details {
   font-size: 0.8rem;
   color: #7f8c8d;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 .region-badge {
   background: #ecf0f1;
   color: #2c3e50;
-  padding: 4px 8px;
+  padding: 4px 10px;
   border-radius: 12px;
   font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.points-cell {
+  font-weight: bold;
+  color: #e74c3c;
+  font-size: 1rem;
+}
+
+.budget-cell {
+  color: #27ae60;
+  font-weight: 500;
 }
 
 .players-count {
-  text-align: center;
   color: #3498db;
-  font-weight: 500;
+  font-weight: 600;
 }
