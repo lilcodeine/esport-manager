@@ -1,26 +1,25 @@
 .team-ranking {
-  padding: 20px;
-  background: #f8f9fa;
+  padding: 30px;
+  background: #ecf0f1;
   min-height: 100vh;
 }
 
 .ranking-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid #e9ecef;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
 }
 
 .ranking-header h1 {
   color: #2c3e50;
-  margin: 0;
+  margin: 0 0 10px 0;
   font-size: 2rem;
 }
 
 .update-info {
-  color: #6c757d;
+  color: #7f8c8d;
   font-size: 0.9rem;
 }
 
@@ -39,40 +38,42 @@
 .ranking-table th {
   background: #34495e;
   color: white;
-  padding: 15px 10px;
+  padding: 15px 12px;
   text-align: left;
   font-weight: 600;
   font-size: 0.9rem;
 }
 
 .ranking-table td {
-  padding: 12px 10px;
-  border-bottom: 1px solid #e9ecef;
+  padding: 12px;
+  border-bottom: 1px solid #ecf0f1;
+  color: #2c3e50;
 }
 
-.even-row {
+.ranking-table tr:nth-child(even) {
   background: #f8f9fa;
 }
 
-.odd-row {
-  background: white;
-}
-
-.even-row:hover, .odd-row:hover {
+.ranking-table tr:hover {
   background: #e3f2fd;
 }
 
-.position-col { width: 100px; }
-.team-col { width: 300px; }
-.points-col { width: 120px; }
+.position-col { width: 80px; }
+.team-col { width: 250px; }
+.points-col { width: 100px; }
 .region-col { width: 150px; }
-.trend-col { width: 80px; }
+.budget-col { width: 150px; }
+.players-col { width: 100px; }
+
+.position-cell {
+  text-align: center;
+}
 
 .position-badge {
   background: #3498db;
   color: white;
   padding: 5px 10px;
-  border-radius: 20px;
+  border-radius: 15px;
   font-weight: bold;
   font-size: 0.8rem;
 }
@@ -82,72 +83,22 @@
   color: #2c3e50;
 }
 
+.team-details {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin-top: 2px;
+}
+
 .region-badge {
   background: #ecf0f1;
   color: #2c3e50;
   padding: 4px 8px;
   border-radius: 12px;
   font-size: 0.8rem;
-  font-weight: 500;
 }
 
-.trend-icon {
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-.ranking-legend {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
-  padding: 15px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.budget-col { width: 150px; }
-
-.team-players {
-  font-size: 0.8rem;
-  color: #666;
-  margin-top: 2px;
-}
-
-.ranking-stats {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 30px;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.stat-number {
-  font-size: 2rem;
-  font-weight: bold;
+.players-count {
+  text-align: center;
   color: #3498db;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 5px;
+  font-weight: 500;
 }

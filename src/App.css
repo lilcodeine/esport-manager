@@ -18,13 +18,15 @@ body {
 /* Sidebar */
 .sidebar {
   width: 280px;
-  background: white;
-  padding: 30px 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background: #2c3e50;
+  color: white;
+  display: flex;
+  flex-direction: column;
   position: fixed;
   height: 100vh;
   left: 0;
   top: 0;
+  overflow-y: auto;
 }
 
 .sidebar-header {
@@ -84,8 +86,9 @@ body {
 /* Główna zawartość */
 .main-content {
   flex: 1;
-  padding: 30px;
   margin-left: 280px;
+  background: #ecf0f1;
+  min-height: 100vh;
 }
 
 /* Header */
