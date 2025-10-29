@@ -18,7 +18,7 @@ body {
 /* Sidebar */
 .sidebar {
   width: 280px;
-  background: #2c3e50;
+  background: #ffffff;
   color: white;
   position: fixed;
   height: 100vh;
@@ -64,11 +64,11 @@ body {
 }
 
 .nav-item:hover {
-  background: #f5f5f5;
+  background: #96cad1;
 }
 
 .nav-item.active:hover {
-  background: #4a2bc4;
+  background: #5638cd;
 }
 
 .nav-icon {
