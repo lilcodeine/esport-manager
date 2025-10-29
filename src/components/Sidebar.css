@@ -1,6 +1,6 @@
 .sidebar {
   width: 280px;
-  background: #2c3e50;
+  background: #7b9fc4;
   color: white;
   display: flex;
   flex-direction: column;
@@ -12,8 +12,8 @@
 
 .sidebar-header {
   padding: 25px 20px;
-  border-bottom: 1px solid #34495e;
-  background: #1a252f;
+  border-bottom: 1px solid #ffffff;
+  background: #ffffff;
 }
 
 .logo {

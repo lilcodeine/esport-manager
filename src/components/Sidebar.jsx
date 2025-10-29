@@ -40,7 +40,7 @@ const Sidebar = ({ onLogout, onMenuChange, activeMenu }) => {
       <div className="sidebar">
         <div className="sidebar-header">
           <div className="logo">Esport Manager</div>
-          <div className="user-title">Team Management</div>
+          {/* <div className="user-title">Team Management</div> */}
         </div>
         <div className="loading-sidebar">Ładowanie...</div>
       </div>
