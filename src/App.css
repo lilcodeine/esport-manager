@@ -83,7 +83,6 @@ body {
 
 /* Główna zawartość */
 .main-content {
-  zoom: 0.8;
   flex: 1;
   margin-left: 280px;
   background: #ecf0f1;

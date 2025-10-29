@@ -37,6 +37,9 @@
   overflow: hidden;
   width: 95%; 
   max-width: 1200px;
+  transform: scale(0.9);
+  transform-origin: top center;
+  margin: 0 auto;
 }
 
 .ranking-table {
