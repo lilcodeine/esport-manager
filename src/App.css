@@ -56,6 +56,7 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s;
+  color: rgb(0, 0, 0);
 }
 
 .nav-item.active {
