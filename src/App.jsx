@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import TeamRanking from './components/TeamRanking';
-import Players from './components/Players'; // Twój istniejący komponent
-// ... import innych komponentów
 
 function App() {
-  const [activeMenu, setActiveMenu] = useState('players'); // domyślnie Players
+  const [activeMenu, setActiveMenu] = useState('players');
 
   const renderContent = () => {
     switch(activeMenu) {
       case 'dashboard':
         return <div>Dashboard - Strona w budowie</div>;
       case 'players':
-        return <Players />; // Twój istniejący komponent z zawodnikami
+        return <div>Players - Strona w budowie</div>;
       case 'schedule':
         return <div>Schedule - Strona w budowie</div>;
       case 'practice':
@@ -20,7 +18,7 @@ function App() {
       case 'ranking':
         return <TeamRanking />;
       default:
-        return <Players />;
+        return <div>Players - Strona w budowie</div>;
     }
   };
 
