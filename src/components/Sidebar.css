@@ -1,6 +1,6 @@
 .sidebar {
   width: 280px;
-  background: #7b9fc4;
+  background: #85abd0;
   color: white;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
 .sidebar-header {
   padding: 25px 20px;
   border-bottom: 1px solid #ffffff;
-  background: #ffffff;
+  background: #85abd0;
 }
 
 .logo {
@@ -43,7 +43,7 @@
 }
 
 .nav-item:hover {
-  background: #34495e;
+  background: #85abd0;
   border-left-color: #3498db;
 }
 
