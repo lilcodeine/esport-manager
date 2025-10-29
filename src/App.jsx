@@ -1,44 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import { auth } from './firebase/config';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
-import './App.css';
+import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
-import Header from './components/Header';
-import CustomerTable from './components/CustomerTable';
-import Login from './components/Login';
+import TeamRanking from './components/TeamRanking';
+import Players from './components/Players'; // Twój istniejący komponent
+// ... import innych komponentów
 
 function App() {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [activeMenu, setActiveMenu] = useState('players'); // domyślnie Players
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user);
-      setLoading(false);
-    });
-
-    return () => unsubscribe();
-  }, []);
-
-  const handleLogout = () => {
-    signOut(auth);
+  const renderContent = () => {
+    switch(activeMenu) {
+      case 'dashboard':
+        return <div>Dashboard - Strona w budowie</div>;
+      case 'players':
+        return <Players />; // Twój istniejący komponent z zawodnikami
+      case 'schedule':
+        return <div>Schedule - Strona w budowie</div>;
+      case 'practice':
+        return <div>Practice - Strona w budowie</div>;
+      case 'ranking':
+        return <TeamRanking />;
+      default:
+        return <Players />;
+    }
   };
 
-  if (loading) {
-    return <div>Ładowanie...</div>;
-  }
-
-  if (!user) {
-    return <Login />;
-  }
+  const handleLogout = () => {
+    // Twoja istniejąca logika wylogowania
+  };
 
   return (
     <div className="app">
-      <Sidebar onLogout={handleLogout} />
-      <div className="main-content">
-        {/* <Header user={user} /> */}
-        <CustomerTable />
-      </div>
+      <Sidebar 
+        onLogout={handleLogout} 
+        onMenuChange={setActiveMenu}
+        activeMenu={activeMenu}
+      />
+      <main className="main-content">
+        {renderContent()}
+      </main>
     </div>
   );
 }

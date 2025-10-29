@@ -481,3 +481,17 @@ body {
   border-color: #5932EA;
   color: #5932EA;
 }
+
+.nav-item.active {
+  background: #3498db;
+  color: white;
+}
+
+.nav-item {
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-item:hover {
+  background: #f8f9fa;
+}

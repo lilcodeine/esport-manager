@@ -3,16 +3,16 @@ import { auth } from '../firebase/config';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../firebase/config';
 
-const Sidebar = ({ onLogout }) => {
+const Sidebar = ({ onLogout, onMenuChange, activeMenu }) => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   
   const menuItems = [
-    { name: 'Dashboard', icon: '📊' },
-    { name: 'Players', icon: '👥', active: true },
-    { name: 'Schedule', icon: '📅' },
-    { name: 'Practice', icon: '⚽' },
-    { name: 'Promote', icon: '📢' }
+    { name: 'Dashboard', icon: '📊', id: 'dashboard' },
+    { name: 'Players', icon: '👥', id: 'players' },
+    { name: 'Schedule', icon: '📅', id: 'schedule' },
+    { name: 'Practice', icon: '⚽', id: 'practice' },
+    { name: 'Ranking', icon: '🥇', id: 'ranking' }
   ];
 
   const user = auth.currentUser;
@@ -58,7 +58,8 @@ const Sidebar = ({ onLogout }) => {
         {menuItems.map((item, index) => (
           <div 
             key={index} 
-            className={`nav-item ${item.active ? 'active' : ''}`}
+            className={`nav-item ${activeMenu === item.id ? 'active' : ''}`}
+            onClick={() => onMenuChange(item.id)}
           >
             <span className="nav-icon">{item.icon}</span>
             <span className="nav-text">{item.name}</span>
