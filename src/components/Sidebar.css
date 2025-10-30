@@ -90,17 +90,18 @@
 }
 
 .logout-btn {
-  width: 100%;
-  padding: 12px;
-  background: #e74c3c;
-  color: white;
+  background: linear-gradient(90deg, #8a2be2, #00aaff);
   border: none;
-  border-radius: 6px;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 15px;
   cursor: pointer;
-  font-weight: 500;
-  transition: background 0.3s;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(0,170,255,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .logout-btn:hover {
-  background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0,170,255,0.6);
 }

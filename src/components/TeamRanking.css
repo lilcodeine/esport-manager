@@ -9,10 +9,10 @@
 }
 
 .ranking-header {
-  background: white;
+  background: #1b1b2f;
   padding: 25px 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,170,255,0.1);
   margin-bottom: 25px;
   width: 95%;
   max-width: 1200px;
@@ -20,7 +20,7 @@
 }
 
 .ranking-header h1 {
-  color: #2c3e50;
+  color: #00aaff;
   margin: 0 0 8px 0;
   font-size: 2rem;
   font-weight: 700;
@@ -32,9 +32,9 @@
 }
 
 .ranking-table-container {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  background: #1b1b2f;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,170,255,0.1);
   overflow: hidden;
   width: 95%; 
   max-width: 1200px;
@@ -51,8 +51,8 @@
 }
 
 .ranking-table th {
-  background: #34495e;
-  color: white;
+  background: #161625;
+  color: #00aaff;
   padding: 16px 12px;
   text-align: left;
   font-weight: 600;
@@ -61,8 +61,8 @@
 
 .ranking-table td {
   padding: 14px 12px;
-  border-bottom: 1px solid #ecf0f1;
-  color: #2c3e50;
+  color: #e0e0e0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .ranking-table tr:nth-child(even) {
@@ -70,7 +70,7 @@
 }
 
 .ranking-table tr:hover {
-  background: #e3f2fd;
+  background: rgba(0,170,255,0.05);
   transition: background 0.2s;
 }
 
@@ -82,7 +82,7 @@
 .players-col { width: 100px; text-align: center; }
 
 .position-badge {
-  background: #3498db;
+  background: linear-gradient(90deg, #00aaff, #8a2be2);
   color: white;
   padding: 6px 12px;
   border-radius: 20px;
