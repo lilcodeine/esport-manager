@@ -51,7 +51,7 @@
 }
 
 .ranking-table th {
-  background: #161625;
+  background: #f8f9fa;
   color: #00aaff;
   padding: 16px 12px;
   text-align: left;
@@ -70,7 +70,7 @@
 }
 
 .ranking-table tr:hover {
-  background: rgba(0,170,255,0.05);
+  background: rgb(159, 175, 182);
   transition: background 0.2s;
 }
 
@@ -94,7 +94,7 @@
 
 .team-name {
   font-weight: 600;
-  color: #2c3e50;
+  color: #242525;
   font-size: 1rem;
 }
 
