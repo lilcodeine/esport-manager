@@ -88,7 +88,6 @@ body {
 .main-content {
   flex: 1;
   margin-left: 280px;
-  background: #12121f;
   min-height: 100vh;
   padding: 30px;
 }
