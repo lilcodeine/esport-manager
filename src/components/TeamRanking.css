@@ -1,6 +1,6 @@
 .team-ranking {
   padding: 30px;
-  background: radial-gradient(circle at top left, #101820 0%, #0c1220 40%, #081025 100%);
+  background: radial-gradient(circle at top left, #101820 0%, #1c2a49 40%, #0b1632 100%);
   background-attachment: fixed;
   min-height: 100vh;
   width: 100%;
@@ -12,8 +12,8 @@
 .ranking-header {
   background: #1b1b2f;
   padding: 25px 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,170,255,0.1);
+  border-radius: 0px;
+  box-shadow: 0 0 25px rgba(0,170,255,0.1);
   margin-bottom: 25px;
   width: 95%;
   max-width: 1200px;
@@ -35,7 +35,7 @@
 .ranking-table-container {
   background: #1b1b2f;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,170,255,0.15);
+  box-shadow: 0 0 30px rgba(0,170,255,0.15);
   overflow: hidden;
   width: 95%; 
   max-width: 1200px;
@@ -62,13 +62,13 @@
 
 .ranking-table td {
   padding: 14px 12px;
-  border-bottom: 1px solid #ecf0f1;
-  background: #f8f9fa;  /* jasne tło */
+  border-bottom: 1px solid #000000;
+  background: #d6dce2;  /* jasne tło */
   color: #000;          /* czarny tekst */
 }
 
 .ranking-table tr:nth-child(even) {
-  background: #f8f9fa;
+  background: #ffffff;
 }
 
 .ranking-table tr:hover td {
